@@ -40,6 +40,7 @@
             android:text="Setting"
             />
 
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -55,6 +56,7 @@
             android:layout_height="wrap_content"
             android:background="#009688">
             <TextView
+                android:id="@+id/dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Home Toolbar"
@@ -64,11 +66,37 @@
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
+            android:id="@+id/something"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textSize="22sp"
             android:text="Home"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/something"
+            android:layout_margin="20dp"
+            android:hint="@string/app_name"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/til"
+            android:layout_centerHorizontal="true"
+            android:text="Show"
             />
 
     </RelativeLayout>

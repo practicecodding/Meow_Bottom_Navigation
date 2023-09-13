@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
@@ -16,10 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     private MeowBottomNavigation bottomNavigation;
     RelativeLayout bSetting,bHome,bPerson,mainLayout;
+    EditText editText;
+    Button button;
+    TextView dp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         getWindow().setStatusBarColor(Color.parseColor("#009688"));
         setContentView(R.layout.activity_main);
 
@@ -28,6 +35,19 @@ public class MainActivity extends AppCompatActivity {
         bHome = findViewById(R.id.home);
         bPerson = findViewById(R.id.person);
         mainLayout = findViewById(R.id.mainLayout);
+        editText = findViewById(R.id.editText);
+        button = findViewById(R.id.button);
+        dp = findViewById(R.id.dp);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String display = editText.getText().toString();
+                dp.setText(""+display);
+
+            }
+        });
 
         bottomNavigation.show(2,true);
 
@@ -146,6 +166,16 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         });
+
+
+
+
+
+
+
+
+
+
 
 
     }
